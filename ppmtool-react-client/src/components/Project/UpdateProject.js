@@ -111,7 +111,7 @@ class UpdateProject extends Component {
                             value={this.state.description}
                             onChange={this.onChange}></textarea>
                             {
-                              errors.projectName && (
+                              errors.description && (
                                 <div className="invalid-feedback">{errors.description}</div>
                               )
                             }
