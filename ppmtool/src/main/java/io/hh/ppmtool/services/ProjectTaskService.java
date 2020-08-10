@@ -41,14 +41,14 @@ public class ProjectTaskService {
 			projectTask.setProjectSequence(projectIdentifier+"-"+BackLogSequence);
 			projectTask.setProjectIdentifier(projectIdentifier);
 			
-			//INITIAL priority when priority null
-			if(projectTask.getPriority() == null) {
-				projectTask.setPriority(3);
-			}
-			
 			//INITIAL status when status is null
 			if(projectTask.getStatus() == "" || projectTask.getStatus() == null) {
 				projectTask.setStatus("TO_DO");
+			}
+			
+			//INITIAL priority when priority null
+			if(projectTask.getPriority() == 0 || projectTask.getPriority() == null) {
+				projectTask.setPriority(3);
 			}
 			
 			return projectTaskRepository.save(projectTask);
