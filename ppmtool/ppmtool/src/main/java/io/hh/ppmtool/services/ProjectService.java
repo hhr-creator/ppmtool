@@ -24,9 +24,7 @@ public class ProjectService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public Project saveOrUpdateProject(Project project, String username) {
-<<<<<<< HEAD:ppmtool/src/main/java/io/hh/ppmtool/services/ProjectService.java
-		
+	public Project saveOrUpdateProject(Project project, String username) {		
 		if(project.getId() != null) {
 			Project existingProject = projectRepository.findByProjectIdentifier(project.getProjectIdentifier());
 			
@@ -36,9 +34,7 @@ public class ProjectService {
 				throw new ProjectNotFoundException("Project with ID '" + project.getProjectIdentifier() + "' cannot be updated because it doesn´t exist");
 			}
 		}
-		
-=======
->>>>>>> origin:ppmtool/ppmtool/src/main/java/io/hh/ppmtool/services/ProjectService.java
+
 		try {
 			
 			User user = userRepository.findByUsername(username);
